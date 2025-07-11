@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>ODD für die digitale Edition des Reisejournals Franz Xaver Bronners</title>
+                <respStmt>
+                    <persName ref="https://d-nb.info/gnd/141407123">
+                        <surname>Ananieva</surname>
+                        <forename>Anna</forename>
+                    </persName>
+                    <resp>
+                        <note type="remarkResponsibility">Editorin</note>
+                    </resp>
+                </respStmt>
+                <respStmt ref="https://orcid.org/0000-0002-0573-3911">
+                    <persName>
+                        <surname>Balck</surname>
+                        <forename>Sandra</forename>
+                    </persName>
+                    <resp>
+                        <note type="remarkResponsibility">Bearbeitung</note>
+                    </resp>
+                </respStmt>
+                <respStmt ref="https://orcid.org/0009-0008-6642-5868">
+                    <persName>
+                        <surname>Möhrke</surname>
+                        <forename>Jacob</forename>
+                    </persName>
+                    <resp>
+                        <note type="remarkResponsibility">Bearbeitung</note>
+                    </resp>
+                </respStmt>
+                <respStmt>
+                    <persName ref="https://d-nb.info/gnd/124619290">
+                        <surname>Beyer-Thoma</surname>
+                        <forename>Hermann</forename>
+                    </persName>
+                    <resp>
+                        <note type="remarkResponsibility">Transkription</note>
+                    </resp>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Leibniz-Institut für Ost- und Südosteuropaforschung (IOS
+                    Regensburg)</publisher>
+                <availability>
+                    <licence target="https://www.gnu.org/licenses/lgpl-3.0.html">LGPL 3.0</licence>
+                </availability>
+                <date when="2025-07-06">06. Juli 2025</date>
+                <idno type="github">https://github.com/dehisre01</idno>
+            </publicationStmt>
+
+            <sourceDesc>
+                <p>Dieses ODD-Dokument beschreibt die textuellen und strukturellen
+                    Kodierungsrichtlinien für die digitale Edition des Reisejournals Franz Xaver
+                    Bronners (19. Jahrhundert). Grundlage ist Version 1.4 (final veröffentlichte
+                    Version) der projektinternen Editionsrichtlinien.</p>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc>
+            <projectDesc>
+                <p xml:lang="de">Die Edition basiert auf einer diplomatischen Transkription der
+                    Handschrift und einer konstituierten Textfassung. Sie folgt den Richtlinien der
+                    TEI und baut auf den Spezifikationen des Deutschen Textarchivs Basisformats
+                    (DTABf) auf.</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language ident="de">Deutsch</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="dct">
+                    <term>Reisebericht</term>
+                    <term>19. Jahrhundert</term>
+                    <term>Autobiographisches Schreiben</term>
+                    <term>Digitale Edition</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+
+        <revisionDesc/>
+    </teiHeader>
+
+    <schemaSpec ident="fxb-journal-schema" xmlns="http://www.tei-c.org/ns/1.0">
+        <title>TEI-Schema für die digitale Edition des Reisejournals Franz Xaver Bronners</title>
+        <desc>Das Schema basiert auf dem TEI P5-Standard unter Berücksichtigung der Vorgaben des
+            DTABf und erweitert diesen um spezifische Kodierungen für die Digitale Edition.</desc>
+
+        <!-- TEI-Basismodule -->
+        <moduleRef key="core">
+            <elementRef key="abbr"/>
+            <elementRef key="add"/>
+            <elementRef key="author"/>
+            <elementRef key="bibl"/>
+            <elementRef key="choice"/>
+            <elementRef key="corr"/>
+            <elementRef key="date"/>
+            <elementRef key="del"/>
+            <elementRef key="editor"/>
+            <elementRef key="expan"/>
+            <elementRef key="foreign"/>
+            <elementRef key="gap"/>
+            <elementRef key="head"/>
+            <elementRef key="hi"/>
+            <elementRef key="item"/>
+            <elementRef key="lb"/>
+            <elementRef key="list"/>
+            <elementRef key="measure"/>
+            <elementRef key="note"/>
+            <elementRef key="orig"/>
+            <elementRef key="p"/>
+            <elementRef key="pb"/>
+            <elementRef key="publisher"/>
+            <elementRef key="resp"/>
+            <elementRef key="respStmt"/>
+            <elementRef key="sic"/>
+            <elementRef key="time"/>
+            <elementRef key="title"/>
+            <elementRef key="unclear"/>
+        </moduleRef>
+
+        <!-- Für <teiHeader> -->
+        <moduleRef key="header">
+            <elementRef key="availability"/>
+            <elementRef key="creation"/>
+            <elementRef key="fileDesc"/>
+            <elementRef key="idno"/>
+            <elementRef key="licence"/>
+            <elementRef key="profileDesc"/>
+            <elementRef key="publicationStmt"/>
+            <elementRef key="sourceDesc"/>
+            <elementRef key="teiHeader"/>
+            <elementRef key="titleStmt"/>
+        </moduleRef>
+
+        <moduleRef key="textstructure">
+            <elementRef key="body"/>
+            <elementRef key="TEI"/>
+            <elementRef key="text"/>
+        </moduleRef>
+
+        <moduleRef key="transcr">
+            <elementRef key="fw"/>
+            <elementRef key="metamark"/>
+            <elementRef key="subst"/>
+            <elementRef key="supplied"/>
+        </moduleRef>
+
+        <moduleRef key="namesdates">
+            <elementRef key="forename"/>
+            <elementRef key="persName"/>
+            <elementRef key="placeName"/>
+            <elementRef key="surname"/>
+        </moduleRef>
+
+        <moduleRef key="linking">
+            <elementRef key="seg"/>
+        </moduleRef>
+
+        <moduleRef key="msdescription">
+            <elementRef key="collection"/>
+            <elementRef key="institution"/>
+            <elementRef key="msDesc"/>
+            <elementRef key="msIdentifier"/>
+        </moduleRef>
+
+        <moduleRef key="figures">
+            <elementRef key="cell"/>
+            <elementRef key="row"/>
+            <elementRef key="table"/>
+        </moduleRef>
+        <!--  Für das ODD  -->
+        <moduleRef key="tagdocs">
+            <elementRef key="attDef"/>
+            <elementRef key="attList"/>
+            <elementRef key="attRef"/>
+            <elementRef key="classes"/>
+            <elementRef key="content"/>
+            <elementRef key="elementRef"/>
+            <elementRef key="elementSpec"/>
+            <elementRef key="memberOf"/>
+            <elementRef key="schemaSpec"/>
+            <elementRef key="sequence"/>
+            <elementRef key="textNode"/>
+            <elementRef key="valDef"/>
+            <elementRef key="valItem"/>
+            <elementRef key="valList"/>
+        </moduleRef>
+
+
+        <elementSpec ident="TEI" mode="change">
+            <classes>
+                <memberOf key="att.global"/>
+            </classes>
+            <content>
+                <sequence preserveOrder="true">
+                    <elementRef key="teiHeader"/>
+                    <elementRef key="text"/>
+                </sequence>
+            </content>
+            <attList>
+                <attDef ident="doctype" usage="optional" ns="http://www.telota.de">
+                    <valList type="closed">
+                        <valItem ident="document"/>
+                        <valItem ident="letter"/>
+                        <valItem ident="journal"/>
+                        <valItem ident="register"/>
+                    </valList>
+                </attDef>
+            </attList>
+        </elementSpec>
+
+        <!--    Elemente des TEI Headers    -->
+        <elementSpec ident="teiHeader" mode="change">
+            <content>
+                <elementRef key="fileDesc"/>
+                <elementRef key="profileDesc"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="titleStmt" mode="change">
+            <content>
+                <sequence preserveOrder="false">
+                    <elementRef key="author" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="editor" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="respStmt" maxOccurs="unbound"/>
+                    <elementRef key="title" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="title" mode="change">
+            <classes>
+                <memberOf key="att.typed"/>
+            </classes>
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="editor" mode="change">
+            <content>
+                <elementRef key="persName" maxOccurs="unbound"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="author" mode="change">
+            <content>
+                <elementRef key="persName" maxOccurs="unbound"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="persName" mode="change">
+            <classes>
+                <memberOf key="att.canonical"/>
+            </classes>
+            <content>
+                <alternate>
+                    <textNode/>
+                    <sequence preserveOrder="false">
+                        <elementRef key="forename"/>
+                        <elementRef key="surname"/>
+                    </sequence>
+                </alternate>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="surname" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="forename" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="respStmt" mode="change">
+            <classes>
+                <memberOf key="att.canonical"/>
+            </classes>
+            <content>
+                <sequence preserveOrder="false">
+                    <elementRef key="persName"/>
+                    <elementRef key="resp"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="resp" mode="change">
+            <content>
+                <elementRef key="note"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="publicationStmt" mode="change">
+            <content>
+                <elementRef key="publisher"/>
+                <elementRef key="availability"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="availability" mode="change">
+            <content>
+                <elementRef key="licence"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="sourceDesc" mode="change">
+            <content>
+                <elementRef key="bibl"/>
+                <elementRef key="msDesc"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="institution" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="collection" mode="change">
+            <classes>
+                <memberOf key="att.typed"/>
+            </classes>
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="idno" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="profileDesc" mode="change">
+            <content>
+                <elementRef key="creation"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="note" mode="change">
+            <classes>
+                <memberOf key="att.global"/>
+                <memberOf key="att.placement"/>
+                <memberOf key="att.written"/>
+                <memberOf key="att.typed"/>
+            </classes>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="bibl" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="fw" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="p" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="pb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="table" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="licence" mode="change">
+            <classes>
+                <memberOf key="att.pointing"/>
+            </classes>
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="creation" mode="change">
+            <content>
+                <elementRef key="persName"/>
+            </content>
+        </elementSpec>
+
+        <!--    Elemente des Textkörpers    -->
+        <elementSpec ident="body" mode="change">
+            <content>
+                <sequence preserveOrder="false">
+                    <elementRef key="fw" maxOccurs="unbound"/>
+                    <elementRef key="note" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="p" maxOccurs="unbound"/>
+                    <elementRef key="pb" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="fw" mode="change">
+            <desc>Kodiert die Seitenzahl.</desc>
+            <classes>
+                <memberOf key="att.written"/>
+                <memberOf key="att.typed"/>
+            </classes>
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="p" mode="change">
+            <desc>Repräsentiert einen Absatz. Absätze werden in der Bronner-Edition diplomatisch
+                übernommen (Originalstruktur).</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="bibl" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="list" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="measure" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="metamark" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="note" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="seg" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="table" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="add" mode="change">
+            <desc>Markiert eine Ergänzung des Autors im Manuskript. Die Position der Ergänzung wird
+                über das Attribut @place definiert.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="abbr" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="measure" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+            <attList>
+                <attDef ident="place" usage="req" mode="change">
+                    <desc>Gibt die Position der Ergänzung im Manuskript an (z. B. interlinear,
+                        marginal, über- oder unterhalb der Zeile).</desc>
+                    <valList type="closed">
+                        <valItem ident="superlinear"/>
+                        <valItem ident="sublinear"/>
+                        <valItem ident="interlinear"/>
+                        <valItem ident="across"/>
+                        <valItem ident="left"/>
+                        <valItem ident="right"/>
+                        <valItem ident="mTop"/>
+                        <valItem ident="mBottom"/>
+                    </valList>
+                </attDef>
+            </attList>
+        </elementSpec>
+
+        <elementSpec ident="del" mode="change">
+            <desc>Zeichnet gestrichenen oder gelöschten Text im Manuskript aus. Die Art der Tilgung
+                wird mit @rendition angegeben.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="measure" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+            <attList>
+                <attDef ident="rendition" usage="req" mode="change">
+                    <desc>Spezifiziert die Art der Streichung, z. B. Durchstreichung, Überschreibung
+                        oder Radierung.</desc>
+                    <valList type="closed">
+                        <valItem ident="#ow">
+                            <desc>Überschrieben (overwritten)</desc>
+                        </valItem>
+                        <valItem ident="#erased">
+                            <desc>Ausradiert / zerstört</desc>
+                        </valItem>
+                        <valItem ident="#s">
+                            <desc>Durchgestrichen</desc>
+                        </valItem>
+                    </valList>
+                </attDef>
+            </attList>
+        </elementSpec>
+
+        <elementSpec ident="subst" mode="change">
+            <desc>Markiert eine Korrektur des Autors, bestehend aus einer Tilgung und einer
+                anschließenden Ergänzung. Beides wird durch die Kindelemente &lt;del&gt; und
+                &lt;add&gt; dargestellt.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <elementRef key="del" maxOccurs="unbound"/>
+                    <elementRef key="add" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="hi" mode="change">
+            <desc>Dient zur Auszeichnung typographischer Hervorhebungen im Manuskript, etwa
+                Unterstreichungen, Hoch- oder Tiefstellungen. Die Art der Hervorhebung wird über das
+                Attribut @rendition festgelegt.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="measure" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+            <attList>
+                <attDef ident="rendition" usage="req" mode="change">
+                    <desc>Gibt die Art der Hervorhebung an, z. B. Unterstreichung oder
+                        Hochstellung.</desc>
+                    <valList type="closed">
+                        <valItem ident="#aq">
+                            <desc>Antiqua</desc>
+                        </valItem>
+                        <valItem ident="#b">
+                            <desc>Fettgedruckt</desc>
+                        </valItem>
+                        <valItem ident="#sub">
+                            <desc>Tiefgestellt</desc>
+                        </valItem>
+                        <valItem ident="#sup">
+                            <desc>Hochgestellt</desc>
+                        </valItem>
+                        <valItem ident="#u">
+                            <desc>Unterstrichen</desc>
+                        </valItem>
+                        <valItem ident="#uu">
+                            <desc>Doppelt unterstrichen</desc>
+                        </valItem>
+                    </valList>
+                </attDef>
+            </attList>
+        </elementSpec>
+
+        <elementSpec ident="choice" mode="change">
+            <desc>Dient zur Darstellung editorischer Alternativen, entweder als Abkürzung/Auflösung
+                oder als fehlerhafte/korrigierte Lesart.</desc>
+            <content>
+                <alternate>
+                    <sequence>
+                        <elementRef key="abbr"/>
+                        <elementRef key="expan"/>
+                    </sequence>
+                    <sequence>
+                        <elementRef key="sic"/>
+                        <elementRef key="corr"/>
+                    </sequence>
+                </alternate>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="abbr" mode="change">
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="expan" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="sic" mode="change">
+            <content>
+                <textNode/>
+
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="corr" mode="change">
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="supplied" mode="change">
+            <desc>Markiert Text, der im Manuskript nicht überliefert ist, aber von dem*der Editor*in
+                rekonstruiert oder ergänzt wurde.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                </sequence>
+            </content>
+            <attList>
+                <attDef ident="cert" mode="change">
+                    <desc>Grad der Sicherheit bei der Lesung.</desc>
+                    <valList type="closed">
+                        <valItem ident="high"/>
+                        <valItem ident="medium"/>
+                        <valItem ident="low"/>
+                    </valList>
+                </attDef>
+            </attList>
+        </elementSpec>
+
+        <elementSpec ident="unclear" mode="change">
+            <desc>Zeichnet eine Stelle aus, deren Lesung unsicher ist, etwa durch Beschädigung,
+                Verblassung oder unleserliche Schrift.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0"/>
+                    <elementRef key="choice" minOccurs="0"/>
+                    <elementRef key="gap" minOccurs="0"/>
+                    <elementRef key="persName" minOccurs="0"/>
+                    <elementRef key="placeName" minOccurs="0"/>
+                </sequence>
+            </content>
+            <attList>
+                <attDef ident="reason" usage="rec" mode="change">
+                    <desc>Grund für die Unklarheit.</desc>
+                    <valList type="closed">
+                        <valItem ident="illegible"/>
+                        <valItem ident="faded"/>
+                        <valItem ident="crossedOut"/>
+                        <valItem ident="damaged"/>
+                    </valList>
+                </attDef>
+                <attDef ident="cert" mode="change">
+                    <desc>Grad der Sicherheit bei der Lesung.</desc>
+                    <valList type="closed">
+                        <valItem ident="high"/>
+                        <valItem ident="medium"/>
+                        <valItem ident="low"/>
+                    </valList>
+                </attDef>
+            </attList>
+        </elementSpec>
+
+        <elementSpec ident="gap" mode="change">
+            <desc>Zeichnet eine Textlücke aus – etwa durch Beschädigung oder verlorene Passagen im
+                Manuskript.</desc>
+            <attList>
+                <attDef ident="reason" usage="rec" mode="change">
+                    <desc>Begründung für die Lücke.</desc>
+                    <valList type="closed">
+                        <valItem ident="lost"/>
+                        <valItem ident="illegible"/>
+                        <valItem ident="omitted"/>
+                        <valItem ident="damaged"/>
+                        <valItem ident="empty"/>
+                    </valList>
+                </attDef>
+
+                <attDef ident="unit" mode="change" usage="rec">
+                    <desc>Einheit der Lücke (z. B. Zeichen, Wörter).</desc>
+                    <valList type="closed">
+                        <valItem ident="char"/>
+                        <valItem ident="word"/>
+                        <valItem ident="line"/>
+                        <valItem ident="page"/>
+                    </valList>
+                </attDef>
+            </attList>
+        </elementSpec>
+
+        <elementSpec ident="persName" mode="change">
+            <desc>Markiert einen Personennamen im Fließtext. Die Verlinkung zum Personenregister
+                erfolgt über das Attribut @key.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="measure" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="sic" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="placeName" mode="change">
+            <desc>Markiert einen Ortsnamen im Fließtext. Die Verlinkung zum Ortsregister erfolgt
+                über das Attribut @key.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="measure" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="measure" mode="change">
+            <desc>Kodiert Maßeinheiten. In der Edition sind dies zumeist Geldbeträge und
+                Entfernungen.</desc>
+            <classes>
+                <memberOf key="att.measurement"/>
+                <memberOf key="att.typed"/>
+            </classes>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+            <attList>
+                <attDef ident="type" mode="change" usage="rec">
+                    <desc>Gibt an um welche Art Maßeinheit es sich handelt.</desc>
+                    <valList type="closed">
+                        <valItem ident="currency"/>
+                        <valItem ident="dimension"/>
+                    </valList>
+                </attDef>
+            </attList>
+        </elementSpec>
+
+        <elementSpec ident="date" mode="change">
+            <desc>Gibt Datumsangaben an. Das Attribut @calendar spezifiziert julianischen (#julian)
+                oder gregorianischen (#gregorian). Eine Besonderheit des Textes ist, dass beide
+                Kalender verwendet werden.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="fw" minOccurs="0"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0"/>
+                    <elementRef key="pb" minOccurs="0"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="list" mode="change">
+            <desc>Strukturiert eine Aufzählung, z. B. in Form nummerierter, alphabetischer oder
+                freier Listen. Die typographische Auszeichnung erfolgt gemäß Vorlage.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="fw" minOccurs="0"/>
+                    <elementRef key="head" minOccurs="0"/>
+                    <elementRef key="hi" minOccurs="0"/>
+                    <elementRef key="item" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0"/>
+                    <elementRef key="pb" minOccurs="0"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="item" mode="change">
+            <desc>Ein Eintrag innerhalb einer Liste. Kann einfachen Text, Hervorhebungen, Entitäten
+                und Inline-Anmerkungen enthalten.</desc>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="list" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="measure" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="table" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="cell" mode="change">
+            <classes>
+                <memberOf key="att.global.rendition"/>
+            </classes>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="list" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="measure" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="table" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="head" mode="change">
+            <content>
+                <textNode/>
+                <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="del" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="foreign" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="gap" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="hi" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="measure" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="subst" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="supplied" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="time" minOccurs="0" maxOccurs="unbound"/>
+                <elementRef key="unclear" minOccurs="0" maxOccurs="unbound"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="time" mode="change">
+            <desc>Für Zeitangaben und Zeitspannen verwendet.</desc>
+            <classes>
+                <memberOf key="att.duration.w3c"/>
+                <memberOf key="att.datable"/>
+            </classes>
+        </elementSpec>
+
+        <elementSpec ident="bibl" mode="change">
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="date" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="choice" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="seg" mode="change">
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="orig" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="add" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="lb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="note" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+    </schemaSpec>
+</TEI>

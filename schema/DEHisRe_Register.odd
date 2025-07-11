@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>ODD für die Register der digitalen Edition des Reisejournals Franz Xaver
+                    Bronners</title>
+                <respStmt>
+                    <persName ref="https://d-nb.info/gnd/141407123">
+                        <surname>Ananieva</surname>
+                        <forename>Anna</forename>
+                    </persName>
+                    <resp>
+                        <note type="remarkResponsibility">Editorin</note>
+                    </resp>
+                </respStmt>
+                <respStmt ref="https://orcid.org/0000-0002-0573-3911">
+                    <persName>
+                        <surname>Balck</surname>
+                        <forename>Sandra</forename>
+                    </persName>
+                    <resp>
+                        <note type="remarkResponsibility">Bearbeitung</note>
+                    </resp>
+                </respStmt>
+                <respStmt ref="https://orcid.org/0009-0008-6642-5868">
+                    <persName>
+                        <surname>Möhrke</surname>
+                        <forename>Jacob</forename>
+                    </persName>
+                    <resp>
+                        <note type="remarkResponsibility">Bearbeitung</note>
+                    </resp>
+                </respStmt>
+                <respStmt>
+                    <persName ref="https://d-nb.info/gnd/124619290">
+                        <surname>Beyer-Thoma</surname>
+                        <forename>Hermann</forename>
+                    </persName>
+                    <resp>
+                        <note type="remarkResponsibility">Transkription</note>
+                    </resp>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Leibniz-Institut für Ost- und Südosteuropaforschung (IOS
+                    Regensburg)</publisher>
+                <availability>
+                    <licence target="https://www.gnu.org/licenses/lgpl-3.0.html">LGPL 3.0</licence>
+                </availability>
+                <date when="2025-05-15">15. Mai 2025</date>
+                <idno type="github">https://github.com/dehisre01</idno>
+            </publicationStmt>
+
+            <sourceDesc>
+                <p>Dieses ODD-Dokument beschreibt die Kodierungsrichtlinien für die Register der
+                    digitalen Edition des Reisejournals Franz Xaver Bronners (19. Jahrhundert).
+                    Grundlage ist Version 1.4 der projektinternen Editionsrichtlinien.</p>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc>
+            <projectDesc>
+                <p xml:lang="de">Die Edition basiert auf einer diplomatischen Transkription der
+                    Handschrift und einer konstituierten Textfassung. Sie folgt den Richtlinien der
+                    TEI und baut auf den Spezifikationen des Deutschen Textarchivs Basisformats
+                    (DTABf) auf.</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language ident="de">Deutsch</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="dct">
+                    <term>Reisebericht</term>
+                    <term>19. Jahrhundert</term>
+                    <term>Autobiographisches Schreiben</term>
+                    <term>Edition</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+
+        <revisionDesc/>
+    </teiHeader>
+
+
+    <schemaSpec ident="fxb-register-schema" xmlns="http://www.tei-c.org/ns/1.0">
+        <title>TEI-Schema für die Register der digitalen Edition des Reisejournals Franz Xaver
+            Bronners</title>
+
+        <!-- TEI-Basismodule -->
+        <moduleRef key="core">
+            <elementRef key="address"/>
+            <elementRef key="author"/>
+            <elementRef key="bibl"/>
+            <elementRef key="editor"/>
+            <elementRef key="note"/>
+            <elementRef key="publisher"/>
+            <elementRef key="resp"/>
+            <elementRef key="respStmt"/>
+            <elementRef key="title"/>
+        </moduleRef>
+
+        <!-- Für <teiHeader> -->
+        <moduleRef key="header">
+            <elementRef key="availability"/>
+            <elementRef key="creation"/>
+            <elementRef key="fileDesc"/>
+            <elementRef key="idno"/>
+            <elementRef key="licence"/>
+            <elementRef key="profileDesc"/>
+            <elementRef key="publicationStmt"/>
+            <elementRef key="sourceDesc"/>
+            <elementRef key="teiHeader"/>
+            <elementRef key="titleStmt"/>
+        </moduleRef>
+
+        <moduleRef key="textstructure">
+            <elementRef key="body"/>
+            <elementRef key="TEI"/>
+            <elementRef key="text"/>
+        </moduleRef>
+
+        <moduleRef key="transcr"> </moduleRef>
+
+        <moduleRef key="namesdates">
+            <elementRef key="birth"/>
+            <elementRef key="death"/>
+            <elementRef key="forename"/>
+            <elementRef key="geo"/>
+            <elementRef key="listPlace"/>
+            <elementRef key="listPerson"/>
+            <elementRef key="location"/>
+            <elementRef key="occupation"/>
+            <elementRef key="persName"/>
+            <elementRef key="person"/>
+            <elementRef key="place"/>
+            <elementRef key="placeName"/>
+            <elementRef key="roleName"/>
+            <elementRef key="sex"/>
+            <elementRef key="surname"/>
+        </moduleRef>
+
+        <moduleRef key="linking"> </moduleRef>
+
+        <moduleRef key="msdescription">
+            <elementRef key="collection"/>
+            <elementRef key="institution"/>
+            <elementRef key="msDesc"/>
+            <elementRef key="msIdentifier"/>
+        </moduleRef>
+
+        <moduleRef key="figures"> </moduleRef>
+        <!--  Für das ODD  -->
+        <moduleRef key="tagdocs">
+            <elementRef key="attDef"/>
+            <elementRef key="attList"/>
+            <elementRef key="attRef"/>
+            <elementRef key="classes"/>
+            <elementRef key="content"/>
+            <elementRef key="elementRef"/>
+            <elementRef key="elementSpec"/>
+            <elementRef key="memberOf"/>
+            <elementRef key="schemaSpec"/>
+            <elementRef key="sequence"/>
+            <elementRef key="textNode"/>
+            <elementRef key="valDef"/>
+            <elementRef key="valItem"/>
+            <elementRef key="valList"/>
+        </moduleRef>
+
+        <elementSpec ident="TEI" mode="change">
+            <classes>
+                <memberOf key="att.global"/>
+            </classes>
+            <content>
+                <sequence preserveOrder="true">
+                    <elementRef key="teiHeader"/>
+                    <elementRef key="text"/>
+                </sequence>
+            </content>
+            <attList>
+                <attDef ident="doctype" usage="optional" ns="http://www.telota.de">
+                    <valList type="closed">
+                        <valItem ident="document"/>
+                        <valItem ident="letter"/>
+                        <valItem ident="journal"/>
+                        <valItem ident="register"/>
+                    </valList>
+                </attDef>
+            </attList>
+        </elementSpec>
+
+        <!--    Elemente des TEI Headers    -->
+        <elementSpec ident="teiHeader" mode="change">
+            <content>
+                <elementRef key="fileDesc"/>
+                <elementRef key="profileDesc"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="titleStmt" mode="change">
+            <content>
+                <sequence preserveOrder="false">
+                    <elementRef key="author" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="editor" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="respStmt" maxOccurs="unbound"/>
+                    <elementRef key="title" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="title" mode="change">
+            <classes>
+                <memberOf key="att.typed"/>
+            </classes>
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="editor" mode="change">
+            <content>
+                <elementRef key="persName" maxOccurs="unbound"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="author" mode="change">
+            <content>
+                <elementRef key="persName" maxOccurs="unbound"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="persName" mode="change">
+            <classes>
+                <memberOf key="att.canonical"/>
+            </classes>
+            <content>
+                <alternate>
+                    <textNode/>
+                    <sequence preserveOrder="false">
+                        <elementRef key="forename"/>
+                        <elementRef key="surname"/>
+                    </sequence>
+                </alternate>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="surname" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="forename" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="respStmt" mode="change">
+            <classes>
+                <memberOf key="att.canonical"/>
+            </classes>
+            <content>
+                <sequence preserveOrder="false">
+                    <elementRef key="persName"/>
+                    <elementRef key="resp"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="resp" mode="change">
+            <content>
+                <elementRef key="note"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="publicationStmt" mode="change">
+            <content>
+                <elementRef key="publisher"/>
+                <elementRef key="availability"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="availability" mode="change">
+            <content>
+                <elementRef key="licence"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="sourceDesc" mode="change">
+            <content>
+                <elementRef key="bibl"/>
+                <elementRef key="msDesc"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="institution" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="collection" mode="change">
+            <classes>
+                <memberOf key="att.typed"/>
+            </classes>
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="idno" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="profileDesc" mode="change">
+            <content>
+                <elementRef key="creation"/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="note" mode="change">
+            <classes>
+                <memberOf key="att.global"/>
+                <memberOf key="att.placement"/>
+                <memberOf key="att.written"/>
+                <memberOf key="att.typed"/>
+            </classes>
+            <content>
+                <sequence preserveOrder="false">
+                    <textNode/>
+                    <elementRef key="bibl" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="fw" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="p" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="pb" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="placeName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="persName" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="table" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="licence" mode="change">
+            <classes>
+                <memberOf key="att.pointing"/>
+            </classes>
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="creation" mode="change">
+            <content>
+                <elementRef key="persName"/>
+            </content>
+        </elementSpec>
+        <!--  Ortsregister  -->
+        <elementSpec ident="place" mode="change">
+            <content>
+                <sequence>
+                    <elementRef key="idno" minOccurs="0"/>
+                    <elementRef key="placeName" maxOccurs="unbound"/>
+                    <elementRef key="note" minOccurs="0"/>
+                    <elementRef key="location" minOccurs="0"/>
+                    <elementRef key="listPlace" minOccurs="0"/>
+                    <elementRef key="bibl" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="location" mode="change">
+            <content>
+                <alternate>
+                    <sequence>
+                        <elementRef key="geo"/>
+                        <elementRef key="address"/>
+                    </sequence>
+                    <elementRef key="geo"/>
+                    <elementRef key="address"/>
+                </alternate>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="address" mode="change">
+            <content>
+                <textNode/>
+            </content>
+        </elementSpec>
+        <!--  Personenregister  -->
+        <elementSpec ident="person" mode="change">
+            <content>
+                <sequence>
+                    <elementRef key="idno" minOccurs="0"/>
+                    <elementRef key="persName" maxOccurs="unbound"/>
+                    <elementRef key="birth"/>
+                    <elementRef key="death"/>
+                    <elementRef key="sex"/>
+                    <elementRef key="occupation" minOccurs="0"/>
+                    <elementRef key="note" minOccurs="0" maxOccurs="unbound"/>
+                    <elementRef key="bibl" minOccurs="0" maxOccurs="unbound"/>
+                </sequence>
+            </content>
+        </elementSpec>
+
+        <elementSpec ident="persName" mode="change">
+            <classes>
+                <memberOf key="att.typed"/>
+            </classes>
+            <content>
+                <alternate>
+                    <textNode/>
+                    <sequence>
+                        <elementRef key="surname"/>
+                        <elementRef key="forename"/>
+                        <elementRef key="roleName" minOccurs="0"/>
+                    </sequence>
+                </alternate>
+            </content>
+        </elementSpec>
+    </schemaSpec>
+</TEI>
