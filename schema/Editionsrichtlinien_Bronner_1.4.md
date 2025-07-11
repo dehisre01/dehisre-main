@@ -193,7 +193,7 @@ Das Attribut @reason beschreibt zudem den Grund für die Unleserlichkeit:
 
 
 | @reason |Bedeutung  |
-|--|--|--|
+|--|--|
 |lost  |Zerstörung/Verlust |
 |illegible  |unleserlich  |
 |covered  |durch Überschreibung schwer leserlich  |
